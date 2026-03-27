@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "blamelog"
+version = "0.1.0"
+description = "Git blame-powered change intelligence CLI"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.0",
+    "gitpython>=3.1",
+    "rich>=13.0",
+]
+
+[project.scripts]
+blamelog = "blamelog.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/blamelog"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov",
+    "ruff",
+]
