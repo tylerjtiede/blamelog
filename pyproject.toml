@@ -19,7 +19,7 @@ blamelog = "blamelog.cli:main"
 [tool.hatch.build.targets.wheel]
 packages = ["src/blamelog"]
 
-[dependency-groups]
+[project.optional-dependencies]
 dev = [
     "pytest>=8.0",
     "pytest-cov",
